@@ -1,0 +1,127 @@
+  body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: centernh;
+  align-items: center;
+  background: #1b2937;
+  font-family: 'Pacifico', cursive;
+
+}
+
+.box {
+  border-radius: 16px;
+
+background-color:linear-gradient(blue,green,yellow);
+
+}
+
+h1 { 
+
+text-align:center;
+  padding:2px;
+  font-size: 35px;
+  font-weight: 500;
+  background: -webkit-linear-gradient(90deg, #42d392, #647eff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.blink-me {
+  animation: blinker 5s linear infinite;
+}
+
+@keyframes blinker {
+  0% {
+    box-shadow: -1px 1px 55px 12px rgba(82, 255, 168, 0.5);
+    -webkit-box-shadow: -1px 1px 55px 12px rgba(82, 255, 168, 0.5);
+  -moz-box-shadow: -1px 1px 55px 12px rgba(82, 255, 168, 0.5);
+  }
+  
+  50% {
+    box-shadow: 0 0 0 0 #1b2937;
+    -webkit-box-shadow: 0 0 0 0 #1b2937;
+  -moz-box-shadow: 0 0 0 0 #1b2937;
+  }
+  
+  100% {
+    box-shadow: -1px 1px 55px 12px rgba(82, 255, 168, 0.5);
+    -webkit-box-shadow: -1px 1px 55px 12px rgba(82, 255, 168, 0.5);
+  -moz-box-shadow: -1px 1px 55px 12px rgba(82, 255, 168, 0.5);
+  }
+}
+
+
+
+.line{
+right: 599px;
+    top: 49px;
+    position: absolute;
+    width: 0px;
+    height: 655px;
+    border: 3px solid white;
+}
+
+.line1{
+width:716px;
+height:0px;
+border:3px solid white;
+position:absolute;
+top:264px;
+}
+
+.line2{
+width:716px;
+height:0px;
+border:3px solid white;
+position:absolute;
+top:484px;
+}
+
+
+.line3{
+width:716px;
+height:0px;
+border:3px solid white;
+position:absolute;
+top:704px;
+}
+
+.line4{
+right: 355px;
+    top: 49px;
+    position: absolute;
+    width: 0px;
+    height: 655px;
+    border: 3px solid white;
+}
+
+.test
+{
+cursor: pointer;
+background-color:#E0EAF1;
+border-bottom:1px solid #3E6D8E;
+border-right:1px solid #7F9FB6;
+color:#3E6D8E;
+font-size:90%;
+line-height:2.2;
+margin:2px 2px 2px 0;
+padding:3px 4px;
+text-decoration:none;
+white-space:nowrap;
+}
+
+
+.line5{
+right: 120px;
+    top: 49px;
+    position: absolute;
+    width: 0px;
+    height: 655px;
+    border: 3px solid white;
+}
+
+
+.h1 {
+    font-size: 35px;
+
+}

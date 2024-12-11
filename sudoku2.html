@@ -1,0 +1,3108 @@
+<html>
+   <head>
+      <title>S_U_D_O_K_U</title>
+      <link rel="shortcut icon" href="sudoku4.png">
+      <link rel="stylesheet" href="sudoku2.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   </head>
+   <body>
+      <style>
+.red
+{
+	background-color:red;
+	color:white;
+}
+   
+.green
+{
+	background-color:green;
+	color:white;
+}
+        body
+         {
+         background-color:#1b1b1b;
+         }
+th,td
+{
+  padding:0%;
+font-size:12px
+}
+      </style>
+      <p align='center'><img src="sd.gif" style="height:90%;"></p>
+      <body>
+         <div class="box blink-me">
+            <table cellspacing="0px" cellpadding="0px" border="1px"  style="color:white;border:2px solid;width:722px;">
+               <tr>
+                  <td style="border-top:7px solid white;border-left:7px solid white;">
+                     <h1>5<input type='hidden' id='t1' value="5"></h1>
+                  </td>
+                  <td style="border-top:7px solid white;">
+                     <h1>3<input type='hidden' id='t2' value="3"></h1>
+                  </td>
+                  <td style="border-right:7px solid white;border-top:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+					
+                        ">
+                        <select class="form-control" id="t3"  onchange="f3()">
+						<option></option>
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-top:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select  onchange="f4()" class="form-control" id="t4">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-top:7px solid white;">
+                     <h1>7<input type='hidden' id='t5' value="7"></h1>
+                  </td>
+                  <td style="border-right:7px solid white;border-top:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select  class="form-control" id="t6" onchange="f6()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+ 					<option>5</option>
+                           <option>6</option>
+                           <option>7</option>
+                           <option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-top:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select onchange="f7()" class="form-control" id="t7">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+					<option>5</option>	
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-top:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select onchange="f8()" class="form-control" id="t8">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+					<option>5</option>
+					<option>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-right:7px solid white;border-top:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select onchange="f9()" class="form-control" id="t9">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+               </tr>
+               <tr>
+                  <td style="border-left:7px solid white;">
+                     <h1>6<input type='hidden' id='t10' value="6"></h1>
+                  </td>
+                  <td>
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t11" onchange="f11()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-right:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t12" onchange="f12()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td>
+                     <h1>1<input type='hidden' id='t13' value="1"></h1>
+                  </td>
+                  <td>
+                     <h1>9<input type='hidden' id='t14' value="9"></h1>
+                  </td>
+                  <td style="border-right:7px solid white;">
+                     <h1>5<input type='hidden' id='t15' value="5"></h1>
+                  </td>
+                  <td>
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t16" onchange="f16()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td>
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t17" onchange="f17()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-right:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t18" onchange="f18()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+               </tr>
+               <tr>
+                  <td style="border-bottom:7px solid white;border-left:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t19" onchange="f19()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-bottom:7px solid white;">
+                     <h1>9<input type='hidden' id='t20' value="9"></h1>
+                  </td>
+                  <td style="border-right:7px solid white;border-bottom:7px solid white;">
+                     <h1>8<input type='hidden' id='t21' value="8"></h1>
+                  </td>
+                  <td style="border-bottom:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t22" onchange="f22()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-bottom:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t23" onchange="f23()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-right:7px solid white;border-bottom:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t24" onchange="f24()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-bottom:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t25" onchange="f25()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-bottom:7px solid white;">
+                     <h1>6<input type='hidden' id='t26' value="6"></h1>
+                  </td>
+                  <td style="border-right:7px solid white;border-bottom:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t27" onchange="f27()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+               </tr>
+               <tr>
+                  <td style="border-left:7px solid white;">
+                     <h1>8<input type='hidden' id='t28' value="8"></h1>
+                  </td>
+                  <td>
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t29" onchange="f29()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-right:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t30" onchange="f30()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td>
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t31" onchange="f31()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td>
+                     <h1>6<input type='hidden' id='t32' value="6"></h1>
+                  </td>
+                  <td style="border-right:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t33" onchange="f33()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td>
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t34" onchange="f34()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td>
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t35" onchange="f35()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-right:7px solid white;">
+                     <h1><input type='hidden' id='t36' value="3">3</h1>
+                  </td>
+               </tr>
+               <tr>
+                  <td style="border-left:7px solid white;">
+                     <h1>4<input type='hidden' id='t37' value="4"></h1>
+                  </td>
+                  <td>
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t38" onchange="f38()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-right:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t39" onchange="f39()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td>
+                     <h1>8<input type='hidden' id='t40' value="8"></h1>
+                  </td>
+                  <td>
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t41" onchange="f41()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-right:7px solid white;">
+                     <h1>3<input type='hidden' id='t42' value="3"></h1>
+                  </td>
+                  <td>
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t43" onchange="f43()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td>
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t44" onchange="f44()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-right:7px solid white;">
+                     <h1>1<input type='hidden' id='t45' value="1"></h1>
+                  </td>
+               </tr>
+               <tr>
+                  <td style="border-bottom:7px solid white;border-left:7px solid white;">
+                     <h1>7<input type='hidden' id='t46' value="7"></h1>
+                  </td>
+                  <td style="border-bottom:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t47" onchange="f47()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-right:7px solid white;border-bottom:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t48" onchange="f48()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-bottom:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t49" onchange="f49()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-bottom:7px solid white;">
+                     <h1>2<input type='hidden' id='t50' value="2"></h1>
+                  </td>
+                  <td style="border-right:7px solid white;border-bottom:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t51" onchange="f51()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-bottom:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t52" onchange="f52()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-bottom:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t53" onchange="f53()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-right:7px solid white;border-bottom:7px solid white;">
+                     <h1>6<input type='hidden' id='t54' value="6"></h1>
+                  </td>
+               </tr>
+               <tr>
+                  <td style="border-left:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t55" onchange="f55()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td>
+                     <h1>6<input type='hidden' id='t56' value="6"></h1>
+                  </td>
+                  <td style="border-right:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t57" onchange="f57()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td>
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        "> 
+                        <select class="form-control" id="t58" onchange="f58()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td>
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t59" onchange="f59()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-right:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t60" onchange="f60()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td>
+                     <h1>2<input type='hidden' id='t61' value="2"></h1>
+                  </td>
+                  <td>
+                     <h1>8<input type='hidden' id='t62' value="8"></h1>
+                  </td>
+                  <td style="border-right:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t63" onchange="f63()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+               </tr>
+               <tr>
+                  <td style="border-left:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t64" onchange="f64()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td>
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t65" onchange="f65()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-right:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t66" onchange="f66()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td>
+                     <h1>4<input type='hidden' id='t67' value="4"></h1>
+                  </td>
+                  <td>
+                     <h1>1<input type='hidden' id='t68' value="1"></h1>
+                  </td>
+                  <td style="border-right:7px solid white;">
+                     <h1>9<input type='hidden' id='t69' value="9"></h1>
+                  </td>
+                  <td>
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t70" onchange="f70()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td>
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t71" onchange="f71()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-right:7px solid white;">
+                     <h1>5<input type='hidden' id='t72' value="5"></h1>
+                  </td>
+               </tr>
+               <tr>
+                  <td style="border-bottom:7px solid white;border-left:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t73" onchange="f73()">
+						<option></option>
+  
+                         <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-bottom:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t74" onchange="f74()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-right:7px solid white;border-bottom:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t75" onchange="f75()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-bottom:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t76" onchange="f76()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-bottom:7px solid white;">
+                     <h1>8<input type='hidden' id='t77' value="8"></h1>
+                  </td>
+                  <td style="border-right:7px solid white;border-bottom:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t78" onchange="f78()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-bottom:7px solid white;">
+                     <div style="
+                        width: 54px;
+                        text-align: center;
+                        margin: auto;
+                        ">
+                        <select class="form-control" id="t79" onchange="f79()">
+						<option></option>
+
+                           <option>1</option>
+                           <option>2</option>
+                           <option>3</option>
+                           <option>4</option>
+						<option>5</option>
+						<option>6</option>
+						<option>7</option>
+						<option>8</option>
+						<option>9</option>
+                        </select>
+                     </div>
+                  </td>
+                  <td style="border-bottom:7px solid white;">
+                     <h1>7<input type='hidden' id='t80' value="7"></h1>
+                  </td>
+                  <td style="border-right:7px solid white;border-bottom:7px solid white;">
+                     <h1>9<input type='hidden' id='t81' value="9"></h1>
+                  </td>
+               </tr>
+            </table>
+         </div>
+   </body>
+
+
+
+<script>
+
+function f3()
+{
+
+t3=parseInt(document.getElementById("t3").value);
+ t1=parseInt(document.getElementById("t1").value);
+t2=parseInt(document.getElementById("t2").value);
+t4=parseInt(document.getElementById("t4").value);
+ t5=parseInt(document.getElementById("t5").value);
+ t6=parseInt(document.getElementById("t6").value);
+t7=parseInt(document.getElementById("t7").value);
+t8=parseInt(document.getElementById("t8").value);
+t9=parseInt(document.getElementById("t9").value);
+t10=parseInt(document.getElementById("t10").value);
+t11=parseInt(document.getElementById("t11").value);
+t12=parseInt(document.getElementById("t12").value);
+t19=parseInt(document.getElementById("t19").value);
+t20=parseInt(document.getElementById("t20").value);
+t21=parseInt(document.getElementById("t21").value);
+t30=parseInt(document.getElementById("t30").value);
+t39=parseInt(document.getElementById("t39").value);
+t48=parseInt(document.getElementById("t48").value);
+t57=parseInt(document.getElementById("t57").value);
+t66=parseInt(document.getElementById("t66").value);
+t75=parseInt(document.getElementById("t75").value);
+if(t3==t1 || t3==t2 || t3==t4 || t3==t5 || t3==t6  || t3==t7  || t3==t8  || t3==t9  || t3==t10  || t3==t11  || t3==t12  || t3==t19  || t3==t20  || t3==t21  || t3==t30 || t3==t39  || t3==t48  || t3==t57  || t3==t66  || t3==t75)
+{
+document.getElementById("t3").className="form-control red";
+}
+else
+{
+document.getElementById("t3").className="form-control green";
+}
+}
+
+
+function f11()
+{
+t11=parseInt(document.getElementById("t11").value);
+t12=parseInt(document.getElementById("t12").value);
+t19=parseInt(document.getElementById("t19").value);
+t20=parseInt(document.getElementById("t20").value);
+t21=parseInt(document.getElementById("t21").value);
+t1=parseInt(document.getElementById("t1").value);
+t2=parseInt(document.getElementById("t2").value);
+t3=parseInt(document.getElementById("t3").value);
+t10=parseInt(document.getElementById("t10").value);
+t29=parseInt(document.getElementById("t29").value);
+t38=parseInt(document.getElementById("t38").value);
+t47=parseInt(document.getElementById("t47").value);
+t56=parseInt(document.getElementById("t56").value);
+t65=parseInt(document.getElementById("t65").value);
+t74=parseInt(document.getElementById("t74").value);
+t13=parseInt(document.getElementById("t13").value);
+t14=parseInt(document.getElementById("t14").value);
+t15=parseInt(document.getElementById("t15").value);
+t16=parseInt(document.getElementById("t16").value);
+t17=parseInt(document.getElementById("t17").value);
+t18=parseInt(document.getElementById("t18").value);
+
+
+if(t11==t1 || t11==t2 || t11==t3 || t11==t13 || t11==t14  || t11==t15  || t11==t16  || t11==t17  || t11==t10  || t11==t18  || t11==t12  || t11==t19  || t11==t20  || t11==t21  || t11==t29 || t11==t38  || t11==t47  || t11==t56  || t11==t65  || t11==t74)
+{
+document.getElementById("t11").className="form-control red";
+}
+else
+{
+document.getElementById("t11").className="form-control green";
+}
+}
+
+
+function f12()
+{
+t11=parseInt(document.getElementById("t11").value);
+t12=parseInt(document.getElementById("t12").value);
+t19=parseInt(document.getElementById("t19").value);
+t20=parseInt(document.getElementById("t20").value);
+t21=parseInt(document.getElementById("t21").value);
+t1=parseInt(document.getElementById("t1").value);
+t2=parseInt(document.getElementById("t2").value);
+t3=parseInt(document.getElementById("t3").value);
+t10=parseInt(document.getElementById("t10").value);
+t30=parseInt(document.getElementById("t29").value);
+t39=parseInt(document.getElementById("t38").value);
+t48=parseInt(document.getElementById("t47").value);
+t57=parseInt(document.getElementById("t56").value);
+t66=parseInt(document.getElementById("t65").value);
+t75=parseInt(document.getElementById("t74").value);
+t13=parseInt(document.getElementById("t13").value);
+t14=parseInt(document.getElementById("t14").value);
+t15=parseInt(document.getElementById("t15").value);
+t16=parseInt(document.getElementById("t16").value);
+t17=parseInt(document.getElementById("t17").value);
+t18=parseInt(document.getElementById("t18").value);
+
+
+if(t12==t1 || t12==t2 || t12==t3 || t12==t13 || t12==t14  || t12==t15  || t12==t16  || t12==t17  || t12==t10  || t12==t18  || t12==t11  || t12==t19  || t12==t20  || t12==t21  || t12==t30 || t12==t39  || t12==t48  || t12==t57  || t12==t66  || t12==t75)
+{
+document.getElementById("t12").className="form-control red";
+}
+else
+{
+document.getElementById("t12").className="form-control green";
+}
+}
+
+
+
+function f19()
+{
+t11=parseInt(document.getElementById("t11").value);
+t12=parseInt(document.getElementById("t12").value);
+t19=parseInt(document.getElementById("t19").value);
+t20=parseInt(document.getElementById("t20").value);
+t21=parseInt(document.getElementById("t21").value);
+t1=parseInt(document.getElementById("t1").value);
+t2=parseInt(document.getElementById("t2").value);
+t3=parseInt(document.getElementById("t3").value);
+t10=parseInt(document.getElementById("t10").value);
+t22=parseInt(document.getElementById("t22").value);
+t23=parseInt(document.getElementById("t23").value);
+t24=parseInt(document.getElementById("t24").value);
+t25=parseInt(document.getElementById("t25").value);
+t26=parseInt(document.getElementById("t26").value);
+t27=parseInt(document.getElementById("t27").value);
+t28=parseInt(document.getElementById("t28").value);
+t37=parseInt(document.getElementById("t37").value);
+t46=parseInt(document.getElementById("t46").value);
+t55=parseInt(document.getElementById("t55").value);
+t64=parseInt(document.getElementById("t64").value);
+t73=parseInt(document.getElementById("t73").value);
+
+
+if(t19==t1 || t19==t2 || t19==t3 || t19==t26 || t19==t10  || t19==t23  || t19==t11  || t19==t25  || t19==t24  || t19==t27  || t19==t12  || t19==t22  || t19==t20  || t19==t21  || t19==t28 || t19==t37  || t19==t46  || t19==t55  || t19==t64  || t19==t73)
+{
+document.getElementById("t19").className="form-control red";
+}
+else
+{
+document.getElementById("t19").className="form-control green";
+}
+}
+
+
+function f4()
+{
+t1=parseInt(document.getElementById("t1").value);
+t2=parseInt(document.getElementById("t2").value);
+t3=parseInt(document.getElementById("t3").value);
+t4=parseInt(document.getElementById("t4").value);
+t5=parseInt(document.getElementById("t5").value);
+t6=parseInt(document.getElementById("t6").value);
+t7=parseInt(document.getElementById("t7").value);
+t8=parseInt(document.getElementById("t8").value);
+t9=parseInt(document.getElementById("t9").value);
+t13=parseInt(document.getElementById("t13").value);
+t14=parseInt(document.getElementById("t14").value);
+t15=parseInt(document.getElementById("t15").value);
+t22=parseInt(document.getElementById("t22").value);
+t23=parseInt(document.getElementById("t23").value);
+t24=parseInt(document.getElementById("t24").value);
+t31=parseInt(document.getElementById("t31").value);
+t40=parseInt(document.getElementById("t40").value);
+t49=parseInt(document.getElementById("t49").value);
+t58=parseInt(document.getElementById("t58").value);
+t67=parseInt(document.getElementById("t67").value);
+t76=parseInt(document.getElementById("t76").value);
+
+
+if(t4==t1 || t4==t2 || t4==t3 || t4==t5 || t4==t6  || t4==t7  || t4==t8  || t4==t9  || t4==t13  || t4==t14  || t4==t15  || t4==t22  || t4==t23  || t4==t24  || t4==t31 || t4==t40  || t4==t49  || t4==t58  || t4==t67  || t4==t76)
+{
+document.getElementById("t4").className="form-control red";
+}
+else
+{
+document.getElementById("t4").className="form-control green";
+}
+}
+
+
+
+function f6()
+{
+t1=parseInt(document.getElementById("t1").value);
+t2=parseInt(document.getElementById("t2").value);
+t3=parseInt(document.getElementById("t3").value);
+t4=parseInt(document.getElementById("t4").value);
+t5=parseInt(document.getElementById("t5").value);
+t6=parseInt(document.getElementById("t6").value);
+t7=parseInt(document.getElementById("t7").value);
+t8=parseInt(document.getElementById("t8").value);
+t9=parseInt(document.getElementById("t9").value);
+t13=parseInt(document.getElementById("t13").value);
+t14=parseInt(document.getElementById("t14").value);
+t15=parseInt(document.getElementById("t15").value);
+t22=parseInt(document.getElementById("t22").value);
+t23=parseInt(document.getElementById("t23").value);
+t24=parseInt(document.getElementById("t24").value);
+t33=parseInt(document.getElementById("t33").value);
+t42=parseInt(document.getElementById("t42").value);
+t51=parseInt(document.getElementById("t51").value);
+t60=parseInt(document.getElementById("t60").value);
+t69=parseInt(document.getElementById("t69").value);
+t78=parseInt(document.getElementById("t78").value);
+
+
+if(t6==t1 || t6==t2 || t6==t3 || t6==t5 || t6==t4  || t6==t7  || t6==t8  || t6==t9  || t6==t13  || t6==t14  || t6==t15  || t6==t22  || t6==t23  || t6==t24  || t6==t33 || t6==t42  || t6==t51  || t6==t60  || t6==t69  || t6==t78)
+{
+document.getElementById("t6").className="form-control red";
+}
+else
+{
+document.getElementById("t6").className="form-control green";
+}
+}
+
+
+function f22()
+{
+t25=parseInt(document.getElementById("t25").value);
+t26=parseInt(document.getElementById("t26").value);
+t27=parseInt(document.getElementById("t27").value);
+t4=parseInt(document.getElementById("t4").value);
+t5=parseInt(document.getElementById("t5").value);
+t6=parseInt(document.getElementById("t6").value);
+t19=parseInt(document.getElementById("t19").value);
+t20=parseInt(document.getElementById("t20").value);
+t21=parseInt(document.getElementById("t21").value);
+t13=parseInt(document.getElementById("t13").value);
+t14=parseInt(document.getElementById("t14").value);
+t15=parseInt(document.getElementById("t15").value);
+t22=parseInt(document.getElementById("t22").value);
+t23=parseInt(document.getElementById("t23").value);
+t24=parseInt(document.getElementById("t24").value);
+t31=parseInt(document.getElementById("t31").value);
+t40=parseInt(document.getElementById("t40").value);
+t49=parseInt(document.getElementById("t49").value);
+t58=parseInt(document.getElementById("t58").value);
+t67=parseInt(document.getElementById("t67").value);
+t76=parseInt(document.getElementById("t76").value);
+
+
+if(t22==t25 || t22==t26 || t22==t27 || t22==t5 || t22==t4  || t22==t19  || t22==t20  || t22==t21  || t22==t13  || t22==t14  || t22==t15  || t22==t6  || t22==t23  || t22==t24  || t22==t31 || t22==t40  || t22==t49  || t22==t58  || t22==t67  || t22==t76)
+{
+document.getElementById("t22").className="form-control red";
+}
+else
+{
+document.getElementById("t22").className="form-control green";
+}
+}
+
+
+
+function f23()
+{
+t25=parseInt(document.getElementById("t25").value);
+t26=parseInt(document.getElementById("t26").value);
+t27=parseInt(document.getElementById("t27").value);
+t4=parseInt(document.getElementById("t4").value);
+t5=parseInt(document.getElementById("t5").value);
+t6=parseInt(document.getElementById("t6").value);
+t19=parseInt(document.getElementById("t19").value);
+t20=parseInt(document.getElementById("t20").value);
+t21=parseInt(document.getElementById("t21").value);
+t13=parseInt(document.getElementById("t13").value);
+t14=parseInt(document.getElementById("t14").value);
+t15=parseInt(document.getElementById("t15").value);
+t22=parseInt(document.getElementById("t22").value);
+t23=parseInt(document.getElementById("t23").value);
+t24=parseInt(document.getElementById("t24").value);
+t32=parseInt(document.getElementById("t32").value);
+t41=parseInt(document.getElementById("t41").value);
+t50=parseInt(document.getElementById("t50").value);
+t59=parseInt(document.getElementById("t59").value);
+t68=parseInt(document.getElementById("t68").value);
+t77=parseInt(document.getElementById("t77").value);
+
+
+if(t23==t25 || t23==t26 || t23==t27 || t23==t5 || t23==t4  || t23==t19  || t23==t20  || t23==t21  || t23==t13  || t23==t14  || t23==t15  || t23==t6  || t23==t22  || t23==t24  || t23==t32 || t23==t41  || t23==t50  || t23==t59  || t23==t68  || t23==t77)
+{
+document.getElementById("t23").className="form-control red";
+}
+else
+{
+document.getElementById("t23").className="form-control green";
+}
+}
+
+
+
+function f24()
+{
+t25=parseInt(document.getElementById("t25").value);
+t26=parseInt(document.getElementById("t26").value);
+t27=parseInt(document.getElementById("t27").value);
+t4=parseInt(document.getElementById("t4").value);
+t5=parseInt(document.getElementById("t5").value);
+t6=parseInt(document.getElementById("t6").value);
+t19=parseInt(document.getElementById("t19").value);
+t20=parseInt(document.getElementById("t20").value);
+t21=parseInt(document.getElementById("t21").value);
+t13=parseInt(document.getElementById("t13").value);
+t14=parseInt(document.getElementById("t14").value);
+t15=parseInt(document.getElementById("t15").value);
+t22=parseInt(document.getElementById("t22").value);
+t23=parseInt(document.getElementById("t23").value);
+t24=parseInt(document.getElementById("t24").value);
+t33=parseInt(document.getElementById("t33").value);
+t42=parseInt(document.getElementById("t42").value);
+t51=parseInt(document.getElementById("t51").value);
+t60=parseInt(document.getElementById("t60").value);
+t69=parseInt(document.getElementById("t69").value);
+t78=parseInt(document.getElementById("t78").value);
+
+
+if(t24==t25 || t24==t26 || t24==t27 || t24==t5 || t24==t4  || t24==t19  || t24==t20  || t24==t21  || t24==t13  || t24==t14  || t24==t15  || t24==t6  || t24==t22  || t24==t23  || t24==t33 || t24==t42  || t24==t51  || t24==t60  || t24==t69  || t24==t78)
+{
+document.getElementById("t24").className="form-control red";
+}
+else
+{
+document.getElementById("t24").className="form-control green";
+}
+}
+
+
+
+function f7()
+{
+t1=parseInt(document.getElementById("t1").value);
+t2=parseInt(document.getElementById("t2").value);
+t3=parseInt(document.getElementById("t3").value);
+t4=parseInt(document.getElementById("t4").value);
+t5=parseInt(document.getElementById("t5").value);
+t6=parseInt(document.getElementById("t6").value);
+t7=parseInt(document.getElementById("t7").value);
+t8=parseInt(document.getElementById("t8").value);
+t9=parseInt(document.getElementById("t9").value);
+t16=parseInt(document.getElementById("t16").value);
+t17=parseInt(document.getElementById("t17").value);
+t18=parseInt(document.getElementById("t18").value);
+t25=parseInt(document.getElementById("t25").value);
+t26=parseInt(document.getElementById("t26").value);
+t27=parseInt(document.getElementById("t27").value);
+t34=parseInt(document.getElementById("t34").value);
+t43=parseInt(document.getElementById("t43").value);
+t52=parseInt(document.getElementById("t52").value);
+t61=parseInt(document.getElementById("t61").value);
+t70=parseInt(document.getElementById("t70").value);
+t79=parseInt(document.getElementById("t79").value);
+
+
+if(t7==t1 || t7==t2 || t7==t3 || t7==t5 || t7==t4  || t7==t8  || t7==t9  || t7==t16  || t7==t17  || t7==t18  || t7==t25  || t7==t6  || t7==t26  || t7==t27  || t7==t34 || t7==t43  || t7==t52  || t7==t61  || t7==t70  || t7==t79)
+{
+document.getElementById("t7").className="form-control red";
+}
+else
+{
+document.getElementById("t7").className="form-control green";
+}
+}
+
+
+
+function f8()
+{
+t1=parseInt(document.getElementById("t1").value);
+t2=parseInt(document.getElementById("t2").value);
+t3=parseInt(document.getElementById("t3").value);
+t4=parseInt(document.getElementById("t4").value);
+t5=parseInt(document.getElementById("t5").value);
+t6=parseInt(document.getElementById("t6").value);
+t7=parseInt(document.getElementById("t7").value);
+t8=parseInt(document.getElementById("t8").value);
+t9=parseInt(document.getElementById("t9").value);
+t16=parseInt(document.getElementById("t16").value);
+t17=parseInt(document.getElementById("t17").value);
+t18=parseInt(document.getElementById("t18").value);
+t25=parseInt(document.getElementById("t25").value);
+t26=parseInt(document.getElementById("t26").value);
+t27=parseInt(document.getElementById("t27").value);
+t35=parseInt(document.getElementById("t35").value);
+t44=parseInt(document.getElementById("t44").value);
+t53=parseInt(document.getElementById("t53").value);
+t62=parseInt(document.getElementById("t62").value);
+t71=parseInt(document.getElementById("t71").value);
+t80=parseInt(document.getElementById("t80").value);
+
+
+if(t8==t1 || t8==t2 || t8==t3 || t8==t5 || t8==t4  || t8==t7  || t8==t9  || t8==t16  || t8==t17  || t8==t18  || t8==t25  || t8==t6  || t8==t26  || t8==t27  || t8==t35 || t8==t44  || t8==t53  || t8==t62  || t8==t71  || t8==t80)
+{
+document.getElementById("t8").className="form-control red";
+}
+else
+{
+document.getElementById("t8").className="form-control green";
+}
+}
+
+
+
+function f9()
+{
+t1=parseInt(document.getElementById("t1").value);
+t2=parseInt(document.getElementById("t2").value);
+t3=parseInt(document.getElementById("t3").value);
+t4=parseInt(document.getElementById("t4").value);
+t5=parseInt(document.getElementById("t5").value);
+t6=parseInt(document.getElementById("t6").value);
+t7=parseInt(document.getElementById("t7").value);
+t8=parseInt(document.getElementById("t8").value);
+t9=parseInt(document.getElementById("t9").value);
+t16=parseInt(document.getElementById("t16").value);
+t17=parseInt(document.getElementById("t17").value);
+t18=parseInt(document.getElementById("t18").value);
+t25=parseInt(document.getElementById("t25").value);
+t26=parseInt(document.getElementById("t26").value);
+t27=parseInt(document.getElementById("t27").value);
+t36=parseInt(document.getElementById("t36").value);
+t45=parseInt(document.getElementById("t45").value);
+t54=parseInt(document.getElementById("t54").value);
+t63=parseInt(document.getElementById("t63").value);
+t72=parseInt(document.getElementById("t72").value);
+t81=parseInt(document.getElementById("t81").value);
+
+
+if(t9==t1 || t9==t2 || t9==t3 || t9==t5 || t9==t4  || t9==t7  || t9==t8  || t9==t16  || t9==t17  || t9==t18  || t9==t25  || t9==t6  || t9==t26  || t9==t27  || t9==t36 || t9==t45  || t9==t54  || t9==t63  || t9==t72  || t9==t81)
+{
+document.getElementById("t9").className="form-control red";
+}
+else
+{
+document.getElementById("t9").className="form-control green";
+}
+}
+
+
+
+
+function f16()
+{
+t10=parseInt(document.getElementById("t10").value);
+t11=parseInt(document.getElementById("t11").value);
+t12=parseInt(document.getElementById("t12").value);
+t13=parseInt(document.getElementById("t13").value);
+t14=parseInt(document.getElementById("t14").value);
+t15=parseInt(document.getElementById("t15").value);
+t7=parseInt(document.getElementById("t7").value);
+t8=parseInt(document.getElementById("t8").value);
+t9=parseInt(document.getElementById("t9").value);
+t16=parseInt(document.getElementById("t16").value);
+t17=parseInt(document.getElementById("t17").value);
+t18=parseInt(document.getElementById("t18").value);
+t25=parseInt(document.getElementById("t25").value);
+t26=parseInt(document.getElementById("t26").value);
+t27=parseInt(document.getElementById("t27").value);
+t34=parseInt(document.getElementById("t34").value);
+t43=parseInt(document.getElementById("t43").value);
+t52=parseInt(document.getElementById("t52").value);
+t61=parseInt(document.getElementById("t61").value);
+t70=parseInt(document.getElementById("t70").value);
+t79=parseInt(document.getElementById("t79").value);
+
+
+if(t16==t10 || t16==t11 || t16==t12 || t16==t13 || t16==t14  || t16==t7  || t16==t8  || t16==t9  || t16==t17  || t16==t18  || t16==t25  || t16==t15  || t16==t26  || t16==t27  || t16==t34 || t16==t43  || t16==t52  || t16==t61  || t16==t70  || t16==t79)
+{
+document.getElementById("t16").className="form-control red";
+}
+else
+{
+document.getElementById("t16").className="form-control green";
+}
+}
+
+
+
+function f17()
+{
+t10=parseInt(document.getElementById("t10").value);
+t11=parseInt(document.getElementById("t11").value);
+t12=parseInt(document.getElementById("t12").value);
+t13=parseInt(document.getElementById("t13").value);
+t14=parseInt(document.getElementById("t14").value);
+t15=parseInt(document.getElementById("t15").value);
+t7=parseInt(document.getElementById("t7").value);
+t8=parseInt(document.getElementById("t8").value);
+t9=parseInt(document.getElementById("t9").value);
+t16=parseInt(document.getElementById("t16").value);
+t17=parseInt(document.getElementById("t17").value);
+t18=parseInt(document.getElementById("t18").value);
+t25=parseInt(document.getElementById("t25").value);
+t26=parseInt(document.getElementById("t26").value);
+t27=parseInt(document.getElementById("t27").value);
+t35=parseInt(document.getElementById("t35").value);
+t44=parseInt(document.getElementById("t44").value);
+t53=parseInt(document.getElementById("t53").value);
+t62=parseInt(document.getElementById("t62").value);
+t71=parseInt(document.getElementById("t71").value);
+t80=parseInt(document.getElementById("t80").value);
+
+
+if(t17==t10 || t17==t11 || t17==t12 || t17==t13 || t17==t14  || t17==t7  || t17==t8  || t17==t9  || t17==t16  || t17==t18  || t17==t25  || t17==t15  || t17==t26  || t17==t27  || t17==t35 || t17==t44  || t17==t53  || t17==t62  || t17==t71  || t17==t80)
+{
+document.getElementById("t17").className="form-control red";
+}
+else
+{
+document.getElementById("t17").className="form-control green";
+}
+}
+
+
+
+function f18()
+{
+t10=parseInt(document.getElementById("t10").value);
+t11=parseInt(document.getElementById("t11").value);
+t12=parseInt(document.getElementById("t12").value);
+t13=parseInt(document.getElementById("t13").value);
+t14=parseInt(document.getElementById("t14").value);
+t15=parseInt(document.getElementById("t15").value);
+t7=parseInt(document.getElementById("t7").value);
+t8=parseInt(document.getElementById("t8").value);
+t9=parseInt(document.getElementById("t9").value);
+t16=parseInt(document.getElementById("t16").value);
+t17=parseInt(document.getElementById("t17").value);
+t18=parseInt(document.getElementById("t18").value);
+t25=parseInt(document.getElementById("t25").value);
+t26=parseInt(document.getElementById("t26").value);
+t27=parseInt(document.getElementById("t27").value);
+t36=parseInt(document.getElementById("t36").value);
+t45=parseInt(document.getElementById("t45").value);
+t54=parseInt(document.getElementById("t54").value);
+t63=parseInt(document.getElementById("t63").value);
+t72=parseInt(document.getElementById("t72").value);
+t81=parseInt(document.getElementById("t81").value);
+
+
+if(t18==t10 || t18==t11 || t18==t12 || t18==t13 || t18==t14  || t18==t7  || t18==t8  || t18==t9  || t18==t16  || t18==t17  || t18==t25  || t18==t15  || t18==t26  || t18==t27  || t18==t36 || t18==t45  || t18==t54  || t18==t63  || t18==t72  || t18==t81)
+{
+document.getElementById("t18").className="form-control red";
+}
+else
+{
+document.getElementById("t18").className="form-control green";
+}
+}
+
+
+
+function f25()
+{
+t19=parseInt(document.getElementById("t19").value);
+t20=parseInt(document.getElementById("t20").value);
+t21=parseInt(document.getElementById("t21").value);
+t22=parseInt(document.getElementById("t22").value);
+t23=parseInt(document.getElementById("t23").value);
+t24=parseInt(document.getElementById("t24").value);
+t7=parseInt(document.getElementById("t7").value);
+t8=parseInt(document.getElementById("t8").value);
+t9=parseInt(document.getElementById("t9").value);
+t16=parseInt(document.getElementById("t16").value);
+t17=parseInt(document.getElementById("t17").value);
+t18=parseInt(document.getElementById("t18").value);
+t25=parseInt(document.getElementById("t25").value);
+t26=parseInt(document.getElementById("t26").value);
+t27=parseInt(document.getElementById("t27").value);
+t34=parseInt(document.getElementById("t34").value);
+t43=parseInt(document.getElementById("t43").value);
+t52=parseInt(document.getElementById("t52").value);
+t61=parseInt(document.getElementById("t61").value);
+t70=parseInt(document.getElementById("t70").value);
+t79=parseInt(document.getElementById("t79").value);
+
+
+if(t25==t19 || t25==t20 || t25==t21 || t25==t22 || t25==t23  || t25==t24  || t25==t8  || t25==t9  || t25==t16  || t25==t17  || 25==t18  || t25==t7  || t25==t26  || t25==t27  || t25==t34 || t25==t43  || t25==t52  || t25==t61  || t25==t70  || t25==t79)
+{
+document.getElementById("t25").className="form-control red";
+}
+else
+{
+document.getElementById("t25").className="form-control green";
+}
+}
+
+
+
+function f27()
+{
+t19=parseInt(document.getElementById("t19").value);
+t20=parseInt(document.getElementById("t20").value);
+t21=parseInt(document.getElementById("t21").value);
+t22=parseInt(document.getElementById("t22").value);
+t23=parseInt(document.getElementById("t23").value);
+t24=parseInt(document.getElementById("t24").value);
+t7=parseInt(document.getElementById("t7").value);
+t8=parseInt(document.getElementById("t8").value);
+t9=parseInt(document.getElementById("t9").value);
+t16=parseInt(document.getElementById("t16").value);
+t17=parseInt(document.getElementById("t17").value);
+t18=parseInt(document.getElementById("t18").value);
+t25=parseInt(document.getElementById("t25").value);
+t26=parseInt(document.getElementById("t26").value);
+t27=parseInt(document.getElementById("t27").value);
+t36=parseInt(document.getElementById("t36").value);
+t45=parseInt(document.getElementById("t45").value);
+t54=parseInt(document.getElementById("t54").value);
+t63=parseInt(document.getElementById("t63").value);
+t72=parseInt(document.getElementById("t72").value);
+t81=parseInt(document.getElementById("t81").value);
+
+
+if(t27==t19 || t27==t20 || t27==t21 || t27==t22 || t27==t23  || t27==t24  || t27==t8  || t27==t9  || t27==t16  || t27==t17  || 27==t18  || t27==t7  || t27==t26  || t27==t25  || t27==t36 || t27==t45  || t27==t54  || t27==t63 || t27==t72  || t27==t81)
+{
+document.getElementById("t27").className="form-control red";
+}
+else
+{
+document.getElementById("t27").className="form-control green";
+}
+}
+
+
+function f29()
+{
+t28=parseInt(document.getElementById("t28").value);
+t29=parseInt(document.getElementById("t29").value);
+t30=parseInt(document.getElementById("t30").value);
+t31=parseInt(document.getElementById("t31").value);
+t32=parseInt(document.getElementById("t32").value);
+t33=parseInt(document.getElementById("t33").value);
+t34=parseInt(document.getElementById("t34").value);
+t35=parseInt(document.getElementById("t35").value);
+t36=parseInt(document.getElementById("t36").value);
+t37=parseInt(document.getElementById("t37").value);
+t38=parseInt(document.getElementById("t38").value);
+t39=parseInt(document.getElementById("t39").value);
+t46=parseInt(document.getElementById("t46").value);
+t47=parseInt(document.getElementById("t47").value);
+t48=parseInt(document.getElementById("t48").value);
+t56=parseInt(document.getElementById("t56").value);
+t65=parseInt(document.getElementById("t65").value);
+t2=parseInt(document.getElementById("t2").value);
+t11=parseInt(document.getElementById("t11").value);
+t20=parseInt(document.getElementById("t20").value);
+t74=parseInt(document.getElementById("t74").value);
+
+
+if(t29==t28 || t29==t30 || t29==t31 || t29==t32 || t29==t33  || t29==t34  || t29==t35  || t29==t36  || t29==t37  || t29==t38  || 29==t39  || t29==t46  || t29==t47  || t29==t48  || t29==t56 || t29==t65  || t29==t2  || t29==t11  || t29==t20  || t29==t74)
+{
+document.getElementById("t29").className="form-control red";
+}
+else
+{
+document.getElementById("t29").className="form-control green";
+}
+}
+
+
+
+function f30()
+{
+t28=parseInt(document.getElementById("t28").value);
+t29=parseInt(document.getElementById("t29").value);
+t30=parseInt(document.getElementById("t30").value);
+t31=parseInt(document.getElementById("t31").value);
+t32=parseInt(document.getElementById("t32").value);
+t33=parseInt(document.getElementById("t33").value);
+t34=parseInt(document.getElementById("t34").value);
+t35=parseInt(document.getElementById("t35").value);
+t36=parseInt(document.getElementById("t36").value);
+t37=parseInt(document.getElementById("t37").value);
+t38=parseInt(document.getElementById("t38").value);
+t39=parseInt(document.getElementById("t39").value);
+t46=parseInt(document.getElementById("t46").value);
+t47=parseInt(document.getElementById("t47").value);
+t48=parseInt(document.getElementById("t48").value);
+t57=parseInt(document.getElementById("t57").value);
+t66=parseInt(document.getElementById("t66").value);
+t3=parseInt(document.getElementById("t3").value);
+t12=parseInt(document.getElementById("t12").value);
+t21=parseInt(document.getElementById("t21").value);
+t75=parseInt(document.getElementById("t75").value);
+
+
+if(t30==t28 || t30==t29 || t30==t31 || t30==t32 || t30==t33  || t30==t34  || t30==t35  || t30==t36  || t30==t37  || t30==t38  || t30==t39  || t30==t46  || t30==t47  || t30==t48  || t30==t57 || t30==t66  || t30==t3  || t30==t12  || t30==t21  || t30==t75)
+{
+document.getElementById("t30").className="form-control red";
+}
+else
+{
+document.getElementById("t30").className="form-control green";
+}
+}
+
+
+function f38()
+{
+t37=parseInt(document.getElementById("t37").value);
+t38=parseInt(document.getElementById("t38").value);
+t39=parseInt(document.getElementById("t39").value);
+t40=parseInt(document.getElementById("t40").value);
+t41=parseInt(document.getElementById("t41").value);
+t42=parseInt(document.getElementById("t42").value);
+t43=parseInt(document.getElementById("t43").value);
+t44=parseInt(document.getElementById("t44").value);
+t45=parseInt(document.getElementById("t45").value);
+t28=parseInt(document.getElementById("t28").value);
+t29=parseInt(document.getElementById("t29").value);
+t30=parseInt(document.getElementById("t30").value);
+t46=parseInt(document.getElementById("t46").value);
+t47=parseInt(document.getElementById("t47").value);
+t48=parseInt(document.getElementById("t48").value);
+t56=parseInt(document.getElementById("t56").value);
+t65=parseInt(document.getElementById("t65").value);
+t2=parseInt(document.getElementById("t2").value);
+t11=parseInt(document.getElementById("t11").value);
+t20=parseInt(document.getElementById("t20").value);
+t74=parseInt(document.getElementById("t74").value);
+
+
+if(t38==t28 || t38==t45 || t38==t44 || t38==t43 || t38==t42  || t38==t41  || t38==t40  || t38==t39  || t38==t37  || t38==t29  || t38==t39  || t38==t46  || t38==t47  || t38==t48  || t38==t56 || t38==t65  || t38==t2  || t38==t11  || t38==t20  || t38==t74)
+{
+document.getElementById("t38").className="form-control red";
+}
+else
+{
+document.getElementById("t38").className="form-control green";
+}
+}
+
+
+
+
+
+function f39()
+{
+t37=parseInt(document.getElementById("t37").value);
+t38=parseInt(document.getElementById("t38").value);
+t39=parseInt(document.getElementById("t39").value);
+t40=parseInt(document.getElementById("t40").value);
+t41=parseInt(document.getElementById("t41").value);
+t42=parseInt(document.getElementById("t42").value);
+t43=parseInt(document.getElementById("t43").value);
+t44=parseInt(document.getElementById("t44").value);
+t45=parseInt(document.getElementById("t45").value);
+t28=parseInt(document.getElementById("t28").value);
+t29=parseInt(document.getElementById("t29").value);
+t30=parseInt(document.getElementById("t30").value);
+t46=parseInt(document.getElementById("t46").value);
+t47=parseInt(document.getElementById("t47").value);
+t48=parseInt(document.getElementById("t48").value);
+t57=parseInt(document.getElementById("t57").value);
+t66=parseInt(document.getElementById("t66").value);
+t3=parseInt(document.getElementById("t3").value);
+t12=parseInt(document.getElementById("t12").value);
+t21=parseInt(document.getElementById("t21").value);
+t75=parseInt(document.getElementById("t75").value);
+
+
+if(t39==t28 || t39==t45 || t39==t44 || t39==t43 || t39==t42  || t39==t41  || t39==t40  || t39==t30  || t39==t37  || t39==t29  || t39==t38  || t39==t46  || t39==t47  || t39==t48  || t39==t57 || t39==t66  || t39==t3  || t39==t12  || t39==t21  || t39==t75)
+{
+document.getElementById("t39").className="form-control red";
+}
+else
+{
+document.getElementById("t39").className="form-control green";
+}
+}
+
+
+
+
+function f47()
+{
+t37=parseInt(document.getElementById("t37").value);
+t38=parseInt(document.getElementById("t38").value);
+t39=parseInt(document.getElementById("t39").value);
+t49=parseInt(document.getElementById("t49").value);
+t50=parseInt(document.getElementById("t50").value);
+t51=parseInt(document.getElementById("t51").value);
+t52=parseInt(document.getElementById("t52").value);
+t53=parseInt(document.getElementById("t53").value);
+t54=parseInt(document.getElementById("t54").value);
+t28=parseInt(document.getElementById("t28").value);
+t29=parseInt(document.getElementById("t29").value);
+t30=parseInt(document.getElementById("t30").value);
+t46=parseInt(document.getElementById("t46").value);
+t47=parseInt(document.getElementById("t47").value);
+t48=parseInt(document.getElementById("t48").value);
+t56=parseInt(document.getElementById("t56").value);
+t65=parseInt(document.getElementById("t65").value);
+t2=parseInt(document.getElementById("t2").value);
+t11=parseInt(document.getElementById("t11").value);
+t20=parseInt(document.getElementById("t20").value);
+t74=parseInt(document.getElementById("t74").value);
+
+
+if(t47==t28 || t47==t54 || t47==t53 || t47==t52 || t47==t51  || t47==t50  | t47==t49  || t47==t39  || t47==t37  || t47==t29  || t47==t39  || t47==t46  || t47==t38  || t47==t48  || t47==t56 || t47==t65  || t47==t2  || t47==t11  || t47==t20  || t47==t74)
+{
+document.getElementById("t47").className="form-control red";
+}
+else
+{
+document.getElementById("t47").className="form-control green";
+}
+}
+
+
+
+
+function f48()
+{
+t37=parseInt(document.getElementById("t37").value);
+t38=parseInt(document.getElementById("t38").value);
+t39=parseInt(document.getElementById("t39").value);
+t28=parseInt(document.getElementById("t28").value);
+t29=parseInt(document.getElementById("t29").value);
+t30=parseInt(document.getElementById("t30").value);
+t46=parseInt(document.getElementById("t46").value);
+t47=parseInt(document.getElementById("t47").value);
+t48=parseInt(document.getElementById("t48").value);
+t49=parseInt(document.getElementById("t49").value);
+t50=parseInt(document.getElementById("t50").value);
+t51=parseInt(document.getElementById("t51").value);
+t52=parseInt(document.getElementById("t52").value);
+t53=parseInt(document.getElementById("t53").value);
+t54=parseInt(document.getElementById("t54").value);
+t57=parseInt(document.getElementById("t57").value);
+t66=parseInt(document.getElementById("t66").value);
+t3=parseInt(document.getElementById("t3").value);
+t12=parseInt(document.getElementById("t12").value);
+t21=parseInt(document.getElementById("t21").value);
+t75=parseInt(document.getElementById("t75").value);
+
+
+if(t48==t28 || t48==t49 || t48==t50 || t48==t51 || t48==t52  || t48==t53  || t48==t54  || t48==t30  || t48==t37  || t48==t29  || t48==t38  || t48==t46  || t48==t47  || t48==t39  || t48==t57 || t48==t66  || t48==t3  || t48==t12  || t48==t21  || t48==t75)
+{
+document.getElementById("t48").className="form-control red";
+}
+else
+{
+document.getElementById("t48").className="form-control green";
+}
+}
+
+
+
+function f31()
+{
+t28=parseInt(document.getElementById("t28").value);
+t29=parseInt(document.getElementById("t29").value);
+t30=parseInt(document.getElementById("t30").value);
+t31=parseInt(document.getElementById("t31").value);
+t32=parseInt(document.getElementById("t32").value);
+t33=parseInt(document.getElementById("t33").value);
+t34=parseInt(document.getElementById("t34").value);
+t35=parseInt(document.getElementById("t35").value);
+t36=parseInt(document.getElementById("t36").value);
+t40=parseInt(document.getElementById("t40").value);
+t41=parseInt(document.getElementById("t41").value);
+t42=parseInt(document.getElementById("t42").value);
+t49=parseInt(document.getElementById("t49").value);
+t50=parseInt(document.getElementById("t50").value);
+t51=parseInt(document.getElementById("t51").value);
+t58=parseInt(document.getElementById("t58").value);
+t67=parseInt(document.getElementById("t67").value);
+t4=parseInt(document.getElementById("t4").value);
+t13=parseInt(document.getElementById("t13").value);
+t22=parseInt(document.getElementById("t22").value);
+t76=parseInt(document.getElementById("t76").value);
+
+
+if(t31==t28 || t31==t30 || t31==t29 || t31==t32 || t31==t33  || t31==t34  || t31==t35  || t31==t36  || t31==t41  || t31==t42  || t31==t40  || t31==t49  || t31==t50  || t31==t51  || t31==t58 || t31==t67  || t31==t4  || t31==t13  || t31==t22  || t31==t76)
+{
+document.getElementById("t31").className="form-control red";
+}
+else
+{
+document.getElementById("t31").className="form-control green";
+}
+}
+
+
+
+function f33()
+{
+t28=parseInt(document.getElementById("t28").value);
+t29=parseInt(document.getElementById("t29").value);
+t30=parseInt(document.getElementById("t30").value);
+t31=parseInt(document.getElementById("t31").value);
+t32=parseInt(document.getElementById("t32").value);
+t33=parseInt(document.getElementById("t33").value);
+t34=parseInt(document.getElementById("t34").value);
+t35=parseInt(document.getElementById("t35").value);
+t36=parseInt(document.getElementById("t36").value);
+t41=parseInt(document.getElementById("t41").value);
+t42=parseInt(document.getElementById("t42").value);
+t40=parseInt(document.getElementById("t40").value);
+t49=parseInt(document.getElementById("t49").value);
+t50=parseInt(document.getElementById("t50").value);
+t51=parseInt(document.getElementById("t51").value);
+t60=parseInt(document.getElementById("t60").value);
+t69=parseInt(document.getElementById("t69").value);
+t6=parseInt(document.getElementById("t6").value);
+t15=parseInt(document.getElementById("t15").value);
+t24=parseInt(document.getElementById("t24").value);
+t78=parseInt(document.getElementById("t78").value);
+
+
+if(t33==t28 || t33==t30 || t33==t29 || t33==t32 || t33==t31  || t33==t34  || t33==t35  || t33==t36  || t33==t41  || t33==t42  || t33==t40  || t33==t49  || t33==t50  || t33==t51  || t33==t60 || t33==t69  || t33==t6  || t33==t15  || t33==t24  || t33==t78)
+{
+document.getElementById("t33").className="form-control red";
+}
+else
+{
+document.getElementById("t33").className="form-control green";
+}
+}
+
+
+
+
+function f41()
+{
+t37=parseInt(document.getElementById("t37").value);
+t38=parseInt(document.getElementById("t38").value);
+t39=parseInt(document.getElementById("t39").value);
+t40=parseInt(document.getElementById("t40").value);
+t41=parseInt(document.getElementById("t41").value);
+t42=parseInt(document.getElementById("t42").value);
+t43=parseInt(document.getElementById("t43").value);
+t44=parseInt(document.getElementById("t44").value);
+t45=parseInt(document.getElementById("t45").value);
+t31=parseInt(document.getElementById("t31").value);
+t32=parseInt(document.getElementById("t32").value);
+t33=parseInt(document.getElementById("t33").value);
+t49=parseInt(document.getElementById("t49").value);
+t50=parseInt(document.getElementById("t50").value);
+t51=parseInt(document.getElementById("t51").value);
+t58=parseInt(document.getElementById("t59").value);
+t68=parseInt(document.getElementById("t68").value);
+t5=parseInt(document.getElementById("t5").value);
+t14=parseInt(document.getElementById("t14").value);
+t23=parseInt(document.getElementById("t23").value);
+t77=parseInt(document.getElementById("t77").value);
+
+
+if(t41==t37 || t41==t38 || t41==t39 || t41==t40 || t41==t42  || t41==t43  || t41==t44  || t41==t45  || t41==t31  || t41==t32  || t41==t33  || t41==t49  || t41==t50  || t41==t51  || t41==t58 || t41==t68  || t41==t5  || t41==t14  || t41==t23  || t41==t77)
+{
+document.getElementById("t41").className="form-control red";
+}
+else
+{
+document.getElementById("t41").className="form-control green";
+}
+}
+
+
+
+function f49()
+{
+t46=parseInt(document.getElementById("t46").value);
+t47=parseInt(document.getElementById("t47").value);
+t48=parseInt(document.getElementById("t48").value);
+t40=parseInt(document.getElementById("t40").value);
+t41=parseInt(document.getElementById("t41").value);
+t42=parseInt(document.getElementById("t42").value);
+t52=parseInt(document.getElementById("t52").value);
+t53=parseInt(document.getElementById("t53").value);
+t54=parseInt(document.getElementById("t54").value);
+t31=parseInt(document.getElementById("t31").value);
+t32=parseInt(document.getElementById("t32").value);
+t33=parseInt(document.getElementById("t33").value);
+t49=parseInt(document.getElementById("t49").value);
+t50=parseInt(document.getElementById("t50").value);
+t51=parseInt(document.getElementById("t51").value);
+t58=parseInt(document.getElementById("t59").value);
+t67=parseInt(document.getElementById("t67").value);
+t4=parseInt(document.getElementById("t4").value);
+t13=parseInt(document.getElementById("t13").value);
+t22=parseInt(document.getElementById("t22").value);
+t76=parseInt(document.getElementById("t76").value);
+
+
+if(t49==t40 || t49==t42 || t49==t54 || t49==t53 || t49==t52  || t49==t48  || t49==t47  || t49==t46  || t49==t31  || t49==t32  || t49==t33  || t49==t41  || t49==t50  || t49==t51  || t49==t58 || t49==t67  || t49==t4  || t49==t13  || t49==t22  || t49==t76)
+{
+document.getElementById("t49").className="form-control red";
+}
+else
+{
+document.getElementById("t49").className="form-control green";
+}
+}
+
+
+
+
+function f51()
+{
+t46=parseInt(document.getElementById("t46").value);
+t47=parseInt(document.getElementById("t47").value);
+t48=parseInt(document.getElementById("t48").value);
+t40=parseInt(document.getElementById("t40").value);
+t41=parseInt(document.getElementById("t41").value);
+t42=parseInt(document.getElementById("t42").value);
+t52=parseInt(document.getElementById("t52").value);
+t53=parseInt(document.getElementById("t53").value);
+t54=parseInt(document.getElementById("t54").value);
+t31=parseInt(document.getElementById("t31").value);
+t32=parseInt(document.getElementById("t32").value);
+t33=parseInt(document.getElementById("t33").value);
+t49=parseInt(document.getElementById("t49").value);
+t50=parseInt(document.getElementById("t50").value);
+t51=parseInt(document.getElementById("t51").value);
+t60=parseInt(document.getElementById("t60").value);
+t69=parseInt(document.getElementById("t69").value);
+t6=parseInt(document.getElementById("t6").value);
+t15=parseInt(document.getElementById("t15").value);
+t24=parseInt(document.getElementById("t24").value);
+t78=parseInt(document.getElementById("t78").value);
+
+
+if(t51==t40 || t51==t42 || t51==t54 || t51==t53 || t51==t52  || t51==t48  || t51==t47  || t51==t46  || t51==t31  || t51==t32  || t51==t33  || t51==t41  || t51==t50  || t51==t49  || t51==t60 || t51==t69  || t51==t6  || t51==t15  || t51==t24  || t51==t78)
+{
+document.getElementById("t51").className="form-control red";
+}
+else
+{
+document.getElementById("t51").className="form-control green";
+}
+}
+
+
+
+function f52()
+{
+t46=parseInt(document.getElementById("t46").value);
+t47=parseInt(document.getElementById("t47").value);
+t48=parseInt(document.getElementById("t48").value);
+t45=parseInt(document.getElementById("t45").value);
+t44=parseInt(document.getElementById("t44").value);
+t43=parseInt(document.getElementById("t43").value);
+t52=parseInt(document.getElementById("t52").value);
+t53=parseInt(document.getElementById("t53").value);
+t54=parseInt(document.getElementById("t54").value);
+t34=parseInt(document.getElementById("t34").value);
+t35=parseInt(document.getElementById("t35").value);
+t36=parseInt(document.getElementById("t36").value);
+t49=parseInt(document.getElementById("t49").value);
+t50=parseInt(document.getElementById("t50").value);
+t51=parseInt(document.getElementById("t51").value);
+t61=parseInt(document.getElementById("t61").value);
+t70=parseInt(document.getElementById("t70").value);
+t7=parseInt(document.getElementById("t7").value);
+t16=parseInt(document.getElementById("t16").value);
+t25=parseInt(document.getElementById("t25").value);
+t79=parseInt(document.getElementById("t79").value);
+
+
+if(t52==t45 || t52==t44 || t52==t54 || t52==t53 || t52==t51  || t52==t48  || t52==t47  || t52==t46  || t52==t34  || t52==t35  || t52==t43  || t52==t41  || t52==t50  || t52==t49  || t52==t61 || t52==t70  || t52==t7  || t52==t16  || t52==t25  || t52==t79)
+{
+document.getElementById("t52").className="form-control red";
+}
+else
+{
+document.getElementById("t52").className="form-control green";
+}
+}
+
+
+
+
+function f53()
+{
+t46=parseInt(document.getElementById("t46").value);
+t47=parseInt(document.getElementById("t47").value);
+t48=parseInt(document.getElementById("t48").value);
+t45=parseInt(document.getElementById("t45").value);
+t44=parseInt(document.getElementById("t44").value);
+t43=parseInt(document.getElementById("t43").value);
+t52=parseInt(document.getElementById("t52").value);
+t53=parseInt(document.getElementById("t53").value);
+t54=parseInt(document.getElementById("t54").value);
+t34=parseInt(document.getElementById("t34").value);
+t35=parseInt(document.getElementById("t35").value);
+t36=parseInt(document.getElementById("t36").value);
+t49=parseInt(document.getElementById("t49").value);
+t50=parseInt(document.getElementById("t50").value);
+t51=parseInt(document.getElementById("t51").value);
+t62=parseInt(document.getElementById("t62").value);
+t71=parseInt(document.getElementById("t71").value);
+t8=parseInt(document.getElementById("t8").value);
+t17=parseInt(document.getElementById("t17").value);
+t26=parseInt(document.getElementById("t26").value);
+t80=parseInt(document.getElementById("t80").value);
+
+
+if(t53==t45 || t53==t44 || t53==t54 || t53==t52 || t53==t51  || t53==t48  || t53==t47  || t53==t46  || t53==t34  || t53==t35  || t53==t43  || t53==t36  || t53==t50  || t53==t49  || t53==t62 || t53==t71  || t53==t8  || t53==t17  || t53==t26  || t53==t80)
+{
+document.getElementById("t53").className="form-control red";
+}
+else
+{
+document.getElementById("t53").className="form-control green";
+}
+}
+
+
+
+function f43()
+{
+t37=parseInt(document.getElementById("t37").value);
+t38=parseInt(document.getElementById("t38").value);
+t39=parseInt(document.getElementById("t39").value);
+t40=parseInt(document.getElementById("t40").value);
+t41=parseInt(document.getElementById("t41").value);
+t43=parseInt(document.getElementById("t43").value);
+t52=parseInt(document.getElementById("t52").value);
+t53=parseInt(document.getElementById("t53").value);
+t54=parseInt(document.getElementById("t54").value);
+t34=parseInt(document.getElementById("t34").value);
+t35=parseInt(document.getElementById("t35").value);
+t36=parseInt(document.getElementById("t36").value);
+t42=parseInt(document.getElementById("t42").value);
+t44=parseInt(document.getElementById("t44").value);
+t45=parseInt(document.getElementById("t45").value);
+t61=parseInt(document.getElementById("t61").value);
+t70=parseInt(document.getElementById("t70").value);
+t7=parseInt(document.getElementById("t7").value);
+t16=parseInt(document.getElementById("t16").value);
+t25=parseInt(document.getElementById("t25").value);
+t79=parseInt(document.getElementById("t79").value);
+
+
+if(t43==t45 || t43==t44 || t43==t54 || t43==t40 || t43==t42  || t43==t39  || t43==t52  || t43==t53  || t43==t34  || t43==t35  || t43==t41  || t43==t36  || t43==t37  || t43==t38  || t43==t61 || t43==t70  || t43==t7  || t43==t16  || t43==t25  || t43==t79)
+{
+document.getElementById("t43").className="form-control red";
+}
+else
+{
+document.getElementById("t43").className="form-control green";
+}
+}
+
+
+
+
+function f44()
+{
+t37=parseInt(document.getElementById("t37").value);
+t38=parseInt(document.getElementById("t38").value);
+t39=parseInt(document.getElementById("t39").value);
+t40=parseInt(document.getElementById("t40").value);
+t41=parseInt(document.getElementById("t41").value);
+t43=parseInt(document.getElementById("t43").value);
+t52=parseInt(document.getElementById("t52").value);
+t53=parseInt(document.getElementById("t53").value);
+t54=parseInt(document.getElementById("t54").value);
+t34=parseInt(document.getElementById("t34").value);
+t35=parseInt(document.getElementById("t35").value);
+t36=parseInt(document.getElementById("t36").value);
+t42=parseInt(document.getElementById("t42").value);
+t44=parseInt(document.getElementById("t44").value);
+t45=parseInt(document.getElementById("t45").value);
+t62=parseInt(document.getElementById("t62").value);
+t71=parseInt(document.getElementById("t71").value);
+t8=parseInt(document.getElementById("t8").value);
+t17=parseInt(document.getElementById("t17").value);
+t26=parseInt(document.getElementById("t26").value);
+t80=parseInt(document.getElementById("t80").value);
+
+
+if(t44==t45 || t44==t43 || t44==t54 || t44==t40 || t44==t42  || t44==t39  || t44==t52  || t44==t53  || t44==t34  || t44==t35  || t44==t41  || t44==t36  || t44==t37  || t44==t38  || t44==t62 || t44==t71  || t44==t8  || t44==t17  || t44==t26  || t44==t80)
+{
+document.getElementById("t44").className="form-control red";
+}
+else
+{
+document.getElementById("t44").className="form-control green";
+}
+}
+
+
+
+
+function f35()
+{
+t28=parseInt(document.getElementById("t28").value);
+t29=parseInt(document.getElementById("t29").value);
+t30=parseInt(document.getElementById("t30").value);
+t31=parseInt(document.getElementById("t31").value);
+t32=parseInt(document.getElementById("t32").value);
+t43=parseInt(document.getElementById("t43").value);
+t52=parseInt(document.getElementById("t52").value);
+t53=parseInt(document.getElementById("t53").value);
+t54=parseInt(document.getElementById("t54").value);
+t34=parseInt(document.getElementById("t34").value);
+t35=parseInt(document.getElementById("t35").value);
+t36=parseInt(document.getElementById("t36").value);
+t33=parseInt(document.getElementById("t33").value);
+t44=parseInt(document.getElementById("t44").value);
+t45=parseInt(document.getElementById("t45").value);
+t62=parseInt(document.getElementById("t62").value);
+t71=parseInt(document.getElementById("t71").value);
+t8=parseInt(document.getElementById("t8").value);
+t17=parseInt(document.getElementById("t17").value);
+t26=parseInt(document.getElementById("t26").value);
+t80=parseInt(document.getElementById("t80").value);
+
+
+if(t35==t45 || t35==t43 || t35==t54 || t35==t32 || t35==t31  || t35==t29  || t35==t52  || t35==t53  || t35==t34  || t35==t44  || t35==t33  || t35==t36  || t35==t30  || t35==t28  || t35==t62 || t35==t71  || t35==t8  || t35==t17  || t35==t26  || t35==t80)
+{
+document.getElementById("t35").className="form-control red";
+}
+else
+{
+document.getElementById("t35").className="form-control green";
+}
+}
+
+
+
+function f34()
+{
+t28=parseInt(document.getElementById("t28").value);
+t29=parseInt(document.getElementById("t29").value);
+t30=parseInt(document.getElementById("t30").value);
+t31=parseInt(document.getElementById("t31").value);
+t32=parseInt(document.getElementById("t32").value);
+t43=parseInt(document.getElementById("t43").value);
+t52=parseInt(document.getElementById("t52").value);
+t53=parseInt(document.getElementById("t53").value);
+t54=parseInt(document.getElementById("t54").value);
+t34=parseInt(document.getElementById("t34").value);
+t35=parseInt(document.getElementById("t35").value);
+t36=parseInt(document.getElementById("t36").value);
+t33=parseInt(document.getElementById("t33").value);
+t44=parseInt(document.getElementById("t44").value);
+t45=parseInt(document.getElementById("t45").value);
+t61=parseInt(document.getElementById("t61").value);
+t70=parseInt(document.getElementById("t70").value);
+t7=parseInt(document.getElementById("t7").value);
+t16=parseInt(document.getElementById("t16").value);
+t25=parseInt(document.getElementById("t25").value);
+t79=parseInt(document.getElementById("t79").value);
+
+
+if(t34==t45 || t34==t43 || t34==t54 || t34==t32 || t34==t31  || t34==t29  || t34==t52  || t34==t53  || t34==t35  || t34==t44  || t34==t33  || t34==t36  || t34==t30  || t34==t28  || t34==t61 || t34==t70  || t34==t7  || t34==t16  || t34==t25  || t34==t79)
+{
+document.getElementById("t34").className="form-control red";
+}
+else
+{
+document.getElementById("t34").className="form-control green";
+}
+}
+
+
+
+function f63()
+{
+t55=parseInt(document.getElementById("t55").value);
+t56=parseInt(document.getElementById("t56").value);
+t57=parseInt(document.getElementById("t57").value);
+t58=parseInt(document.getElementById("t58").value);
+t59=parseInt(document.getElementById("t59").value);
+t60=parseInt(document.getElementById("t60").value);
+t61=parseInt(document.getElementById("t61").value);
+t62=parseInt(document.getElementById("t62").value);
+t63=parseInt(document.getElementById("t63").value);
+t72=parseInt(document.getElementById("t72").value);
+t71=parseInt(document.getElementById("t71").value);
+t70=parseInt(document.getElementById("t70").value);
+t81=parseInt(document.getElementById("t81").value);
+t80=parseInt(document.getElementById("t80").value);
+t79=parseInt(document.getElementById("t79").value);
+t54=parseInt(document.getElementById("t54").value);
+t45=parseInt(document.getElementById("t45").value);
+t36=parseInt(document.getElementById("t36").value);
+t27=parseInt(document.getElementById("t27").value);
+t18=parseInt(document.getElementById("t18").value);
+t9=parseInt(document.getElementById("t9").value);
+
+
+if(t63==t72 || t63==t71 || t63==t70 || t63==t81 || t63==t80  || t63==t79  || t63==t62  || t63==t61  || t63==t60  || t63==t59  || t63==t58  || t63==t57  || t63==t56  || t63==t55  || t63==t54 || t63==t45  || t63==t36  || t63==t27  || t63==t18  || t63==t9)
+{
+document.getElementById("t63").className="form-control red";
+}
+else
+{
+document.getElementById("t63").className="form-control green";
+}
+}
+
+
+
+function f71()
+{
+t64=parseInt(document.getElementById("t64").value);
+t65=parseInt(document.getElementById("t65").value);
+t66=parseInt(document.getElementById("t66").value);
+t67=parseInt(document.getElementById("t67").value);
+t68=parseInt(document.getElementById("t68").value);
+t69=parseInt(document.getElementById("t69").value);
+t61=parseInt(document.getElementById("t61").value);
+t62=parseInt(document.getElementById("t62").value);
+t63=parseInt(document.getElementById("t63").value);
+t72=parseInt(document.getElementById("t72").value);
+t71=parseInt(document.getElementById("t71").value);
+t70=parseInt(document.getElementById("t70").value);
+t81=parseInt(document.getElementById("t81").value);
+t80=parseInt(document.getElementById("t80").value);
+t79=parseInt(document.getElementById("t79").value);
+t53=parseInt(document.getElementById("t53").value);
+t44=parseInt(document.getElementById("t44").value);
+t35=parseInt(document.getElementById("t35").value);
+t26=parseInt(document.getElementById("t26").value);
+t17=parseInt(document.getElementById("t17").value);
+t8=parseInt(document.getElementById("t8").value);
+
+
+if(t71==t72 || t71==t63 || t71==t70 || t71==t81 || t71==t80  || t71==t79  || t71==t62  || t71==t69  || t71==t67  || t71==t69  || t71==t68  || t71==t66  || t71==t65  || t71==t64  || t71==t53 || t71==t44  || t71==t35  || t71==t26  || t71==t17  || t71==t8)
+{
+document.getElementById("t71").className="form-control red";
+}
+else
+{
+document.getElementById("t71").className="form-control green";
+}
+}
+
+
+
+function f70()
+{
+t64=parseInt(document.getElementById("t64").value);
+t65=parseInt(document.getElementById("t65").value);
+t66=parseInt(document.getElementById("t66").value);
+t67=parseInt(document.getElementById("t67").value);
+t68=parseInt(document.getElementById("t68").value);
+t69=parseInt(document.getElementById("t69").value);
+t61=parseInt(document.getElementById("t61").value);
+t62=parseInt(document.getElementById("t62").value);
+t63=parseInt(document.getElementById("t63").value);
+t72=parseInt(document.getElementById("t72").value);
+t71=parseInt(document.getElementById("t71").value);
+t70=parseInt(document.getElementById("t70").value);
+t81=parseInt(document.getElementById("t81").value);
+t80=parseInt(document.getElementById("t80").value);
+t79=parseInt(document.getElementById("t79").value);
+t52=parseInt(document.getElementById("t52").value);
+t43=parseInt(document.getElementById("t43").value);
+t34=parseInt(document.getElementById("t34").value);
+t25=parseInt(document.getElementById("t25").value);
+t16=parseInt(document.getElementById("t16").value);
+t7=parseInt(document.getElementById("t7").value);
+
+
+if(t70==t72 || t70==t63 || t70==t71 || t70==t81 || t70==t80  || t70==t79  || t70==t62  || t70==t69  || t70==t67  || t70==t69  || t70==t68  || t70==t66  || t70==t65  || t70==t64  || t70==t52 || t70==t43  || t70==t34  || t70==t25  || t70==t16  || t70==t7)
+{
+document.getElementById("t70").className="form-control red";
+}
+else
+{
+document.getElementById("t70").className="form-control green";
+}
+}
+
+
+
+
+function f79()
+{
+t73=parseInt(document.getElementById("t73").value);
+t74=parseInt(document.getElementById("t74").value);
+t75=parseInt(document.getElementById("t75").value);
+t76=parseInt(document.getElementById("t76").value);
+t77=parseInt(document.getElementById("t77").value);
+t78=parseInt(document.getElementById("t78").value);
+t61=parseInt(document.getElementById("t61").value);
+t62=parseInt(document.getElementById("t62").value);
+t63=parseInt(document.getElementById("t63").value);
+t72=parseInt(document.getElementById("t72").value);
+t71=parseInt(document.getElementById("t71").value);
+t70=parseInt(document.getElementById("t70").value);
+t81=parseInt(document.getElementById("t81").value);
+t80=parseInt(document.getElementById("t80").value);
+t79=parseInt(document.getElementById("t79").value);
+t52=parseInt(document.getElementById("t52").value);
+t43=parseInt(document.getElementById("t43").value);
+t34=parseInt(document.getElementById("t34").value);
+t25=parseInt(document.getElementById("t25").value);
+t16=parseInt(document.getElementById("t16").value);
+t7=parseInt(document.getElementById("t7").value);
+
+
+if(t79==t73 || t79==t63 || t79==t71 || t79==t81 || t79==t80  || t79==t70  || t79==t62  || t79==t74  || t79==t75  || t79==t76  || t79==t77  || t79==t78  || t79==t72  || t79==t73  || t79==t52 || t79==t43  || t79==t34  || t79==t25  || t79==t16  || t79==t7)
+{
+document.getElementById("t79").className="form-control red";
+}
+else
+{
+document.getElementById("t79").className="form-control green";
+}
+}
+
+
+
+
+function f78()
+{
+t73=parseInt(document.getElementById("t73").value);
+t74=parseInt(document.getElementById("t74").value);
+t75=parseInt(document.getElementById("t75").value);
+t76=parseInt(document.getElementById("t76").value);
+t77=parseInt(document.getElementById("t77").value);
+t78=parseInt(document.getElementById("t78").value);
+t58=parseInt(document.getElementById("t58").value);
+t59=parseInt(document.getElementById("t59").value);
+t60=parseInt(document.getElementById("t60").value);
+t67=parseInt(document.getElementById("t67").value);
+t68=parseInt(document.getElementById("t68").value);
+t69=parseInt(document.getElementById("t69").value);
+t81=parseInt(document.getElementById("t81").value);
+t80=parseInt(document.getElementById("t80").value);
+t79=parseInt(document.getElementById("t79").value);
+t51=parseInt(document.getElementById("t51").value);
+t42=parseInt(document.getElementById("t42").value);
+t33=parseInt(document.getElementById("t33").value);
+t24=parseInt(document.getElementById("t24").value);
+t15=parseInt(document.getElementById("t15").value);
+t6=parseInt(document.getElementById("t6").value);
+
+
+if(t78==t58 || t78==t59 || t78==t60 || t78==t81 || t78==t80  || t78==t67  || t78==t68  || t78==t74  || t78==t75  || t78==t76  || t78==t77  || t78==t79  || t78==t69  || t78==t73  || t78==t51 || t78==t42  || t78==t33  || t78==t24  || t78==t15  || t78==t6)
+{
+document.getElementById("t78").className="form-control red";
+}
+else
+{
+document.getElementById("t78").className="form-control green";
+}
+}
+
+
+
+function f76()
+{
+t73=parseInt(document.getElementById("t73").value);
+t74=parseInt(document.getElementById("t74").value);
+t75=parseInt(document.getElementById("t75").value);
+t76=parseInt(document.getElementById("t76").value);
+t77=parseInt(document.getElementById("t77").value);
+t78=parseInt(document.getElementById("t78").value);
+t58=parseInt(document.getElementById("t58").value);
+t59=parseInt(document.getElementById("t59").value);
+t60=parseInt(document.getElementById("t60").value);
+t67=parseInt(document.getElementById("t67").value);
+t68=parseInt(document.getElementById("t68").value);
+t69=parseInt(document.getElementById("t69").value);
+t81=parseInt(document.getElementById("t81").value);
+t80=parseInt(document.getElementById("t80").value);
+t79=parseInt(document.getElementById("t79").value);
+t49=parseInt(document.getElementById("t49").value);
+t40=parseInt(document.getElementById("t40").value);
+t31=parseInt(document.getElementById("t31").value);
+t22=parseInt(document.getElementById("t22").value);
+t13=parseInt(document.getElementById("t13").value);
+t4=parseInt(document.getElementById("t4").value);
+
+
+if(t76==t58 || t76==t59 || t76==t60 || t76==t81 || t76==t80  || t76==t67  || t76==t68  || t76==t74  || t76==t75  || t76==t78  || t76==t77  || t76==t79  || t76==t69  || t76==t73  || t76==t49 || t76==t40  || t76==t31  || t76==t22  || t76==t13  || t76==t4)
+{
+document.getElementById("t76").className="form-control red";
+}
+else
+{
+document.getElementById("t76").className="form-control green";
+}
+}
+
+
+function f58()
+{
+t55=parseInt(document.getElementById("t55").value);
+t56=parseInt(document.getElementById("t56").value);
+t57=parseInt(document.getElementById("t57").value);
+t61=parseInt(document.getElementById("t61").value);
+t62=parseInt(document.getElementById("t62").value);
+t63=parseInt(document.getElementById("t63").value);
+t58=parseInt(document.getElementById("t58").value);
+t59=parseInt(document.getElementById("t59").value);
+t60=parseInt(document.getElementById("t60").value);
+t67=parseInt(document.getElementById("t67").value);
+t68=parseInt(document.getElementById("t68").value);
+t69=parseInt(document.getElementById("t69").value);
+t78=parseInt(document.getElementById("t78").value);
+t77=parseInt(document.getElementById("t77").value);
+t76=parseInt(document.getElementById("t76").value);
+t49=parseInt(document.getElementById("t49").value);
+t40=parseInt(document.getElementById("t40").value);
+t31=parseInt(document.getElementById("t31").value);
+t22=parseInt(document.getElementById("t22").value);
+t13=parseInt(document.getElementById("t13").value);
+t4=parseInt(document.getElementById("t4").value);
+
+
+if(t58==t76 || t58==t59 || t58==t60 || t58==t61 || t58==t62  || t58==t67  || t58==t68  || t58==t63  || t58==t57 || t58==t78  || t58==t77  || t58==t56  || t58==t69  || t58==t55  || t58==t49 || t58==t40  || t58==t31  || t58==t22  || t58==t13  || t58==t4)
+{
+document.getElementById("t58").className="form-control red";
+}
+else
+{
+document.getElementById("t58").className="form-control green";
+}
+}
+
+
+function f59()
+{
+t55=parseInt(document.getElementById("t55").value);
+t56=parseInt(document.getElementById("t56").value);
+t57=parseInt(document.getElementById("t57").value);
+t61=parseInt(document.getElementById("t61").value);
+t62=parseInt(document.getElementById("t62").value);
+t63=parseInt(document.getElementById("t63").value);
+t58=parseInt(document.getElementById("t58").value);
+t59=parseInt(document.getElementById("t59").value);
+t60=parseInt(document.getElementById("t60").value);
+t67=parseInt(document.getElementById("t67").value);
+t68=parseInt(document.getElementById("t68").value);
+t69=parseInt(document.getElementById("t69").value);
+t78=parseInt(document.getElementById("t78").value);
+t77=parseInt(document.getElementById("t77").value);
+t76=parseInt(document.getElementById("t76").value);
+t50=parseInt(document.getElementById("t50").value);
+t41=parseInt(document.getElementById("t41").value);
+t32=parseInt(document.getElementById("t32").value);
+t23=parseInt(document.getElementById("t23").value);
+t14=parseInt(document.getElementById("t14").value);
+t5=parseInt(document.getElementById("t5").value);
+
+
+if(t59==t76 || t59==t58 || t59==t60 || t59==t61 || t59==t62  || t59==t67  || t59==t68  || t59==t63  || t59==t57 || t59==t78  || t59==t77  || t59==t56  || t59==t69  || t59==t55  || t59==t50 || t59==t41  || t59==t32  || t59==t23  || t59==t14  || t59==t5)
+{
+document.getElementById("t59").className="form-control red";
+}
+else
+{
+document.getElementById("t59").className="form-control green";
+}
+}
+
+
+function f60()
+{
+t55=parseInt(document.getElementById("t55").value);
+t56=parseInt(document.getElementById("t56").value);
+t57=parseInt(document.getElementById("t57").value);
+t61=parseInt(document.getElementById("t61").value);
+t62=parseInt(document.getElementById("t62").value);
+t63=parseInt(document.getElementById("t63").value);
+t58=parseInt(document.getElementById("t58").value);
+t59=parseInt(document.getElementById("t59").value);
+t60=parseInt(document.getElementById("t60").value);
+t67=parseInt(document.getElementById("t67").value);
+t68=parseInt(document.getElementById("t68").value);
+t69=parseInt(document.getElementById("t69").value);
+t78=parseInt(document.getElementById("t78").value);
+t77=parseInt(document.getElementById("t77").value);
+t76=parseInt(document.getElementById("t76").value);
+t51=parseInt(document.getElementById("t51").value);
+t42=parseInt(document.getElementById("t42").value);
+t33=parseInt(document.getElementById("t33").value);
+t24=parseInt(document.getElementById("t24").value);
+t15=parseInt(document.getElementById("t15").value);
+t6=parseInt(document.getElementById("t6").value);
+
+
+if(t60==t76 || t60==t58 || t60==t59 || t60==t61 || t60==t62  || t60==t67  || t60==t68  || t60==t63  || t60==t57 || t60==t78  || t60==t77  || t60==t56  || t60==t69  || t60==t55  || t60==t51 || t60==t42  || t60==t33  || t60==t24  || t60==t15  || t60==t6)
+{
+document.getElementById("t60").className="form-control red";
+}
+else
+{
+document.getElementById("t60").className="form-control green";
+}
+}
+
+
+function f57()
+{
+t55=parseInt(document.getElementById("t55").value);
+t56=parseInt(document.getElementById("t56").value);
+t57=parseInt(document.getElementById("t57").value);
+t61=parseInt(document.getElementById("t61").value);
+t62=parseInt(document.getElementById("t62").value);
+t63=parseInt(document.getElementById("t63").value);
+t58=parseInt(document.getElementById("t58").value);
+t59=parseInt(document.getElementById("t59").value);
+t60=parseInt(document.getElementById("t60").value);
+t64=parseInt(document.getElementById("t64").value);
+t65=parseInt(document.getElementById("t65").value);
+t66=parseInt(document.getElementById("t66").value);
+t75=parseInt(document.getElementById("t75").value);
+t74=parseInt(document.getElementById("t74").value);
+t73=parseInt(document.getElementById("t73").value);
+t48=parseInt(document.getElementById("t48").value);
+t39=parseInt(document.getElementById("t39").value);
+t30=parseInt(document.getElementById("t30").value);
+t21=parseInt(document.getElementById("t21").value);
+t12=parseInt(document.getElementById("t12").value);
+t3=parseInt(document.getElementById("t3").value);
+
+
+if(t58==t76 || t57==t59 || t57==t60 || t57==t61 || t57==t62  || t57==t65  || t57==t64  || t57==t63  || t57==t58 || t57==t75  || t57==t66  || t57==t56  || t57==t74  || t57==t55  || t57==t48 || t47==t39  || t57==t30  || t57==t21  || t57==t12  || t57==t3)
+{
+document.getElementById("t57").className="form-control red";
+}
+else
+{
+document.getElementById("t57").className="form-control green";
+}
+}
+
+
+function f55()
+{
+t55=parseInt(document.getElementById("t55").value);
+t56=parseInt(document.getElementById("t56").value);
+t57=parseInt(document.getElementById("t57").value);
+t61=parseInt(document.getElementById("t61").value);
+t62=parseInt(document.getElementById("t62").value);
+t63=parseInt(document.getElementById("t63").value);
+t58=parseInt(document.getElementById("t58").value);
+t59=parseInt(document.getElementById("t59").value);
+t60=parseInt(document.getElementById("t60").value);
+t64=parseInt(document.getElementById("t64").value);
+t65=parseInt(document.getElementById("t65").value);
+t66=parseInt(document.getElementById("t66").value);
+t75=parseInt(document.getElementById("t75").value);
+t74=parseInt(document.getElementById("t74").value);
+t73=parseInt(document.getElementById("t73").value);
+t46=parseInt(document.getElementById("t46").value);
+t37=parseInt(document.getElementById("t37").value);
+t28=parseInt(document.getElementById("t28").value);
+t19=parseInt(document.getElementById("t19").value);
+t10=parseInt(document.getElementById("t10").value);
+t1=parseInt(document.getElementById("t1").value);
+
+
+if(t55==t76 || t55==t59 || t55==t60 || t55==t61 || t55==t62  || t55==t65  || t55==t64  || t55==t63  || t55==t58 || t55==t75  || t55==t66  || t55==t56  || t55==t74  || t55==t57  || t55==t46 || t55==t37  || t55==t28  || t55==t19  || t55==t10  || t55==t1)
+{
+document.getElementById("t55").className="form-control red";
+}
+else
+{
+document.getElementById("t55").className="form-control green";
+}
+}
+
+
+
+
+function f64()
+{
+t55=parseInt(document.getElementById("t55").value);
+t56=parseInt(document.getElementById("t56").value);
+t57=parseInt(document.getElementById("t57").value);
+t67=parseInt(document.getElementById("t67").value);
+t68=parseInt(document.getElementById("t68").value);
+t69=parseInt(document.getElementById("t69").value);
+t70=parseInt(document.getElementById("t70").value);
+t71=parseInt(document.getElementById("t71").value);
+t64=parseInt(document.getElementById("t64").value);
+t65=parseInt(document.getElementById("t65").value);
+t72=parseInt(document.getElementById("t72").value);
+t66=parseInt(document.getElementById("t66").value);
+t75=parseInt(document.getElementById("t75").value);
+t74=parseInt(document.getElementById("t74").value);
+t73=parseInt(document.getElementById("t73").value);
+t46=parseInt(document.getElementById("t46").value);
+t37=parseInt(document.getElementById("t37").value);
+t28=parseInt(document.getElementById("t28").value);
+t19=parseInt(document.getElementById("t19").value);
+t10=parseInt(document.getElementById("t10").value);
+t1=parseInt(document.getElementById("t1").value);
+
+
+if(t64==t73 || t64==t67 || t64==t69 || t64==t68 || t64==t72  || t64==t65  || t64==t55  || t64==t71  || t64==t70 || t64==t75  || t64==t66  || t64==t56  || t64==t74  || t64==t57  || t64==t46 || t64==t37  || t64==t28  || t64==t19  || t64==t10  || t64==t1)
+{
+document.getElementById("t64").className="form-control red";
+}
+else
+{
+document.getElementById("t64").className="form-control green";
+}
+}
+
+
+
+function f65()
+{
+t55=parseInt(document.getElementById("t55").value);
+t56=parseInt(document.getElementById("t56").value);
+t57=parseInt(document.getElementById("t57").value);
+t67=parseInt(document.getElementById("t67").value);
+t68=parseInt(document.getElementById("t68").value);
+t69=parseInt(document.getElementById("t69").value);
+t70=parseInt(document.getElementById("t70").value);
+t71=parseInt(document.getElementById("t71").value);
+t64=parseInt(document.getElementById("t64").value);
+t65=parseInt(document.getElementById("t65").value);
+t72=parseInt(document.getElementById("t72").value);
+t66=parseInt(document.getElementById("t66").value);
+t75=parseInt(document.getElementById("t75").value);
+t74=parseInt(document.getElementById("t74").value);
+t73=parseInt(document.getElementById("t73").value);
+t47=parseInt(document.getElementById("t47").value);
+t38=parseInt(document.getElementById("t38").value);
+t29=parseInt(document.getElementById("t29").value);
+t20=parseInt(document.getElementById("t20").value);
+t11=parseInt(document.getElementById("t11").value);
+t2=parseInt(document.getElementById("t2").value);
+
+
+if(t65==t73 || t65==t67 || t65==t69 || t65==t68 || t65==t72  || t65==t64  || t65==t55  || t65==t71  || t65==t70 || t65==t75  || t65==t66  || t65==t56  || t65==t74  || t65==t57  || t65==t47 || t65==t38  || t65==t29  || t65==t20  || t65==t11  || t65==t2)
+{
+document.getElementById("t65").className="form-control red";
+}
+else
+{
+document.getElementById("t65").className="form-control green";
+}
+}
+
+
+
+function f66()
+{
+t55=parseInt(document.getElementById("t55").value);
+t56=parseInt(document.getElementById("t56").value);
+t57=parseInt(document.getElementById("t57").value);
+t67=parseInt(document.getElementById("t67").value);
+t68=parseInt(document.getElementById("t68").value);
+t69=parseInt(document.getElementById("t69").value);
+t70=parseInt(document.getElementById("t70").value);
+t71=parseInt(document.getElementById("t71").value);
+t64=parseInt(document.getElementById("t64").value);
+t65=parseInt(document.getElementById("t65").value);
+t72=parseInt(document.getElementById("t72").value);
+t66=parseInt(document.getElementById("t66").value);
+t75=parseInt(document.getElementById("t75").value);
+t74=parseInt(document.getElementById("t74").value);
+t73=parseInt(document.getElementById("t73").value);
+t48=parseInt(document.getElementById("t48").value);
+t37=parseInt(document.getElementById("t37").value);
+t30=parseInt(document.getElementById("t30").value);
+t21=parseInt(document.getElementById("t21").value);
+t12=parseInt(document.getElementById("t12").value);
+t3=parseInt(document.getElementById("t3").value);
+
+
+if(t66==t73 || t66==t67 || t66==t69 || t66==t68 || t66==t72  || t66==t64  || t66==t55  || t66==t71  || t66==t70 || t66==t75  || t66==t65  || t66==t56  || t66==t74  || t66==t57  || t66==t48 || t66==t37  || t66==t30  || t66==t21  || t66==t12  || t66==t3)
+{
+document.getElementById("t66").className="form-control red";
+}
+else
+{
+document.getElementById("t66").className="form-control green";
+}
+}
+
+
+
+function f75()
+{
+t76=parseInt(document.getElementById("t76").value);
+t77=parseInt(document.getElementById("t77").value);
+t78=parseInt(document.getElementById("t78").value);
+t79=parseInt(document.getElementById("t79").value);
+t56=parseInt(document.getElementById("t56").value);
+t57=parseInt(document.getElementById("t57").value);
+t81=parseInt(document.getElementById("t81").value);
+t80=parseInt(document.getElementById("t80").value);
+t64=parseInt(document.getElementById("t64").value);
+t65=parseInt(document.getElementById("t65").value);
+t55=parseInt(document.getElementById("t55").value);
+t66=parseInt(document.getElementById("t66").value);
+t75=parseInt(document.getElementById("t75").value);
+t74=parseInt(document.getElementById("t74").value);
+t73=parseInt(document.getElementById("t73").value);
+t48=parseInt(document.getElementById("t48").value);
+t39=parseInt(document.getElementById("t39").value);
+t30=parseInt(document.getElementById("t30").value);
+t21=parseInt(document.getElementById("t21").value);
+t12=parseInt(document.getElementById("t12").value);
+t3=parseInt(document.getElementById("t3").value);
+
+
+if(t75==t73 || t75==t81 || t75==t80 || t75==t78 || t75==t79  || t75==t64  || t75==t55  || t75==t57  || t75==t77 || t75==t66  || t75==t65  || t75==t56  || t75==t74  || t75==t76  || t75==t48 || t75==t39  || t75==t30  || t75==t21  || t75==t12  || t75==t3)
+{
+document.getElementById("t75").className="form-control red";
+}
+else
+{
+document.getElementById("t75").className="form-control green";
+}
+}
+
+
+function f74()
+{
+t76=parseInt(document.getElementById("t76").value);
+t77=parseInt(document.getElementById("t77").value);
+t78=parseInt(document.getElementById("t78").value);
+t79=parseInt(document.getElementById("t79").value);
+t56=parseInt(document.getElementById("t56").value);
+t57=parseInt(document.getElementById("t57").value);
+t81=parseInt(document.getElementById("t81").value);
+t80=parseInt(document.getElementById("t80").value);
+t64=parseInt(document.getElementById("t64").value);
+t65=parseInt(document.getElementById("t65").value);
+t55=parseInt(document.getElementById("t55").value);
+t66=parseInt(document.getElementById("t66").value);
+t75=parseInt(document.getElementById("t75").value);
+t74=parseInt(document.getElementById("t74").value);
+t73=parseInt(document.getElementById("t73").value);
+t47=parseInt(document.getElementById("t47").value);
+t38=parseInt(document.getElementById("t38").value);
+t29=parseInt(document.getElementById("t29").value);
+t20=parseInt(document.getElementById("t20").value);
+t11=parseInt(document.getElementById("t11").value);
+t2=parseInt(document.getElementById("t2").value);
+
+
+if(t74==t73 || t74==t81 || t74==t80 || t74==t78 || t74==t79  || t74==t64  || t74==t55  || t74==t57  || t74==t77 || t74==t66  || t74==t65  || t74==t56  || t74==t75  || t74==t76  || t74==t47 || t74==t38  || t74==t29  || t74==t20  || t74==t11  || t74==t2)
+{
+document.getElementById("t74").className="form-control red";
+}
+else
+{
+document.getElementById("t74").className="form-control green";
+}
+}
+
+
+function f73()
+{
+t76=parseInt(document.getElementById("t76").value);
+t77=parseInt(document.getElementById("t77").value);
+t78=parseInt(document.getElementById("t78").value);
+t79=parseInt(document.getElementById("t79").value);
+t56=parseInt(document.getElementById("t56").value);
+t57=parseInt(document.getElementById("t57").value);
+t81=parseInt(document.getElementById("t81").value);
+t80=parseInt(document.getElementById("t80").value);
+t64=parseInt(document.getElementById("t64").value);
+t65=parseInt(document.getElementById("t65").value);
+t55=parseInt(document.getElementById("t55").value);
+t66=parseInt(document.getElementById("t66").value);
+t75=parseInt(document.getElementById("t75").value);
+t74=parseInt(document.getElementById("t74").value);
+t73=parseInt(document.getElementById("t73").value);
+t46=parseInt(document.getElementById("t46").value);
+t37=parseInt(document.getElementById("t37").value);
+t28=parseInt(document.getElementById("t28").value);
+t19=parseInt(document.getElementById("t19").value);
+t10=parseInt(document.getElementById("t10").value);
+t1=parseInt(document.getElementById("t1").value);
+
+
+if(t73==t74 || t73==t81 || t73==t80 || t73==t78 || t73==t79  || t73==t64  || t73==t55  || t73==t57  || t73==t77 || t73==t66  || t73==t65  || t73==t56  || t73==t75  || t73==t76  || t73==t46 || t73==t37  || t73==t28  || t73==t19  || t73==t10  || t73==t1)
+{
+document.getElementById("t73").className="form-control red";
+}
+else
+{
+document.getElementById("t73").className="form-control green";
+}
+}
+
+</script>
